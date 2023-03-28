@@ -1,0 +1,82 @@
+select * from customers;
+
+select company_name, city from customers;
+
+select company_name, city
+from customers
+limit 10;
+
+
+select company_name, city from customers limit 10;
+
+/* COMENTÁRIO */
+
+-- COMENTÁRIO
+
+select distinct city from customers;
+
+select postal_code from customers;
+
+/* Alias => AS */
+
+select postal_code AS CEP from customers;
+
+select postal_code AS CEP from customers AS cust;
+
+select postal_code as cep from customers as cust;
+
+select company_name from customers where city = 'Vancouver';
+select company_name,city from customers where city = 'Vancouver';
+
+select company_name from customers where city != 'Vancouver';
+select company_name, city from customers where city != 'Vancouver';
+
+--selecione o nome das empresas e o nome dos contatos de empresas que ficam
+--na Alemanha e o contato seja representante de vendas
+
+select company_name, contact_name
+from customers
+where country = 'Germany' and contact_title = 'Sales Representative';
+
+-- seleciona o nome e a cidade das empresas que estão em  São Paulo ou no Rio de Janeiro
+
+select company_name, contact_name
+from customers
+where  city = 'Sao Paulo' or  city = 'Rio de Janeiro'
+
+-- autocomplete:  ctrl+espaço
+
+-- comando lower: transforma o conteúdo que é procurado em minúsculo
+
+
+--select company_name, contact_name
+--from customers
+--where  lower(city) = 'sao paulo' or  lower(city) = 'rio de janeiro';
+
+
+--selecione todas as empresas escandinavas(Suécia, Dinamarca, Finlândia,Noruega)
+
+-- select company_name
+-- from customers 
+-- where country = 'Sweden' or country = 'Denmark' or country = 'Finland' or country = 'Norway';
+
+-- select company_name from customers where  customeres where region is null;
+
+select * from employees;
+
+select employee_id, first_name
+from employees
+where employee_id between 3 and 7;
+
+select employee_id, first_name
+from employees
+where employee_id >=3 and  employee_id <=7;
+
+-- selecione todas as empresas em que os representantes sejam do setor de vendas.
+select company_name
+from customers
+where contact_title like 'Sales Representative'
+---where contact_title like '%Sales%'
+
+
+
